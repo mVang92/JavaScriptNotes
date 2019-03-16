@@ -15,17 +15,35 @@ const reverse = arr => {
     }
 }
 
+const moveZeros = arr => {
+    let currentIndex = 0;
+
+    for (let letterIndex = 0; letterIndex < arr.length; letterIndex++) {
+        let letter = arr[letterIndex];
+
+        if (letter != 0) {
+            swap(arr, currentIndex, letterIndex);
+            currentIndex++;
+        }
+    }
+}
+
 const printRes = arr => {
-    arr.forEach(function(element) {
+    arr.forEach((element) => {
         console.log(element);
     })
 }
 
 const main = () => {
     let arr1 = [3, 6, 2, 6, 9];
-    // Reverse an array
-    reverse(arr1);
-    printRes(arr1);
+    let arr2 = [3, 0, 8, 0, 0, 5, 1];
+    // Reverse an array -----------------------------
+    // reverse(arr1);
+    // printRes(arr1);
+
+    // Move all zeros to the end of array -----------
+    moveZeros(arr2);
+    printRes(arr2);
 }
 
 main();
