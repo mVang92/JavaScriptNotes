@@ -28,6 +28,21 @@ const moveZeros = arr => {
     }
 }
 
+const diagonalDifference = arr => {
+    let leftSum = 0;
+    let rightSum = 0;
+    let rear = arr.length - 1;
+    let difference;
+
+    for (let i = 0; i < arr.length; i++) {
+        leftSum += arr[i][i];
+        rightSum += arr[i][rear--];
+    }
+
+    difference = rightSum - leftSum;
+    return difference;
+}
+
 const printRes = arr => {
     arr.forEach((element) => {
         console.log(element);
@@ -37,13 +52,18 @@ const printRes = arr => {
 const main = () => {
     let arr1 = [3, 6, 2, 6, 9];
     let arr2 = [3, 0, 8, 0, 0, 5, 1];
+    let diagDiff = [[3, 4, 5],[4, 9, 1],[8, 6, 1]];
     // Reverse an array -----------------------------
     // reverse(arr1);
     // printRes(arr1);
 
     // Move all zeros to the end of array -----------
-    moveZeros(arr2);
-    printRes(arr2);
+    // moveZeros(arr2);
+    // printRes(arr2);
+
+    // Diagonal Difference
+    const answer = diagonalDifference(diagDiff);
+    console.log(answer);
 }
 
 main();
