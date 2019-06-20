@@ -43,6 +43,15 @@ const diagonalDifference = arr => {
     return difference;
 }
 
+const doubleADollarAMonth = (days, currentDay, totalMoney) => {
+    console.log("Day " + currentDay + ": " + totalMoney);
+    if (currentDay < days) {
+        currentDay ++;
+        totalMoney *= 2;
+        doubleADollarAMonth(days, currentDay, totalMoney);
+    }
+}
+
 const printRes = arr => {
     arr.forEach((element) => {
         console.log(element);
@@ -53,6 +62,10 @@ const main = () => {
     let arr1 = [3, 6, 2, 6, 9];
     let arr2 = [3, 0, 8, 0, 0, 5, 1];
     let diagDiff = [[3, 4, 5],[4, 9, 1],[8, 6, 1]];
+    let days = 31;
+    let currentDay = 1;
+    let totalMoney = 1;
+
     // Reverse an array -----------------------------
     // reverse(arr1);
     // printRes(arr1);
@@ -61,9 +74,12 @@ const main = () => {
     // moveZeros(arr2);
     // printRes(arr2);
 
-    // Diagonal Difference
-    const answer = diagonalDifference(diagDiff);
-    console.log(answer);
+    // Diagonal Difference --------------------------
+    // const answer = diagonalDifference(diagDiff);
+    // console.log(answer);
+
+    // Double a dollar for a month ------------------
+    doubleADollarAMonth(days, currentDay, totalMoney);
 }
 
 main();
