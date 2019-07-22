@@ -43,12 +43,22 @@ const diagonalDifference = arr => {
     return difference;
 }
 
-const doubleADollarAMonth = (days, currentDay, totalMoney) => {
+const doubleADollarAMonthRecursively = (days, currentDay, totalMoney) => {
     console.log("Day " + currentDay + ": " + totalMoney);
     if (currentDay < days) {
-        currentDay ++;
+        currentDay++;
         totalMoney *= 2;
         doubleADollarAMonth(days, currentDay, totalMoney);
+    }
+}
+
+const doubleADollarAMonthForLoop = () => {
+    let days = 31;
+    let totalMoney = 1;
+
+    for (let currentDay = 1; currentDay <= days; currentDay++) {
+        console.log("Day " + currentDay + ": " + totalMoney);
+        totalMoney *= 2;
     }
 }
 
@@ -61,7 +71,7 @@ const printRes = arr => {
 const main = () => {
     let arr1 = [3, 6, 2, 6, 9];
     let arr2 = [3, 0, 8, 0, 0, 5, 1];
-    let diagDiff = [[3, 4, 5],[4, 9, 1],[8, 6, 1]];
+    let diagDiff = [[3, 4, 5], [4, 9, 1], [8, 6, 1]];
     let days = 31;
     let currentDay = 1;
     let totalMoney = 1;
@@ -79,7 +89,8 @@ const main = () => {
     // console.log(answer);
 
     // Double a dollar for a month ------------------
-    doubleADollarAMonth(days, currentDay, totalMoney);
+    // doubleADollarAMonthRecursively(days, currentDay, totalMoney);
+    doubleADollarAMonthForLoop();
 }
 
 main();
