@@ -62,6 +62,35 @@ const doubleADollarAMonthForLoop = () => {
     }
 }
 
+const timerRecursive = () => {
+    let seconds = 0;
+    let minutes = 0;
+    let hours = 0;
+    let days = 0;
+    runTimer(seconds, minutes, hours, days);
+}
+
+const runTimer = (seconds, minutes, hours, days) => {
+    console.log(days + " days, " + hours + " hours, " + minutes + " minutes, " + seconds + " seconds");
+    seconds++;
+    if (seconds == 60) {
+        minutes++;
+        seconds = 0;
+    }
+    if (minutes == 60) {
+        hours++;
+        minutes = 0;
+    }
+    if (hours == 24) {
+        days++;
+        hours = 0;
+    }
+
+    setTimeout(function(){
+        runTimer(seconds, minutes, hours, days);
+    }, 1000)
+}
+
 const printRes = arr => {
     arr.forEach((element) => {
         console.log(element);
@@ -90,7 +119,10 @@ const main = () => {
 
     // Double a dollar for a month ------------------
     // doubleADollarAMonthRecursively(days, currentDay, totalMoney);
-    doubleADollarAMonthForLoop();
+    // doubleADollarAMonthForLoop();
+
+    // Recursive timer
+    timerRecursive();
 }
 
 main();
