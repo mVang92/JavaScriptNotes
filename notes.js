@@ -4,6 +4,17 @@ const swap = (arr, a, b) => {
     arr[b] = temp;
 }
 
+const reverseArrayWithoutSwapFunction = (array) => {
+    let rear = array.length - 1;
+    let newReversedArray = [];
+
+    for (let currentIndex = rear; currentIndex >= 0; currentIndex--) {
+        newReversedArray.push(array[currentIndex])
+    }
+
+    console.log(newReversedArray);
+}
+
 const reverse = arr => {
     let front = 0;
     let back = arr.length - 1;
@@ -122,7 +133,10 @@ const main = () => {
     // doubleADollarAMonthForLoop();
 
     // Recursive timer
-    timerRecursive();
+    // timerRecursive();
+
+    // Reverse an array without swap function
+    reverseArrayWithoutSwapFunction(arr1)
 }
 
 main();
