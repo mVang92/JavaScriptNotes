@@ -4,7 +4,7 @@ const swap = (arr, a, b) => {
     arr[b] = temp;
 }
 
-const reverseArrayWithoutSwapFunction = (array) => {
+const reverseArrayWithoutSwapFunction = array => {
     let rear = array.length - 1;
     let newReversedArray = [];
 
