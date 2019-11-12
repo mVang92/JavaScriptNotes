@@ -97,7 +97,7 @@ const runTimer = (seconds, minutes, hours, days) => {
         hours = 0;
     }
 
-    setTimeout(function(){
+    setTimeout(function () {
         runTimer(seconds, minutes, hours, days);
     }, 1000)
 }
@@ -108,6 +108,27 @@ const printRes = arr => {
     })
 }
 
+const cleanString = string => {
+    let filteredString = [];
+    for (let element = 0; element < string.length; element++) {
+        if (string[element] === '0' ||
+            string[element] === '1' ||
+            string[element] === '2' ||
+            string[element] === '3' ||
+            string[element] === '4' ||
+            string[element] === '5' ||
+            string[element] === '6' ||
+            string[element] === '7' ||
+            string[element] === '8' ||
+            string[element] === '9'
+        ) {
+        } else {
+            filteredString.push(string[element]);
+        }
+    }
+    console.log(filteredString)
+}
+
 const main = () => {
     let arr1 = [3, 6, 2, 6, 9];
     let arr2 = [3, 0, 8, 0, 0, 5, 1];
@@ -115,6 +136,7 @@ const main = () => {
     let days = 31;
     let currentDay = 1;
     let totalMoney = 1;
+    let badString = "Thi9s is8 a4 st5ri8ng"
 
     // Reverse an array -----------------------------
     // reverse(arr1);
@@ -136,7 +158,10 @@ const main = () => {
     // timerRecursive();
 
     // Reverse an array without swap function
-    reverseArrayWithoutSwapFunction(arr1)
+    // reverseArrayWithoutSwapFunction(arr1);
+
+    // Clean this string
+    cleanString(badString);
 }
 
 main();
